@@ -1,21 +1,14 @@
 package main
 
-import "strings"
+// func main(){
+// 	r1 := solution("3people unFollowed me")
+// 	r2 := solution("for the last week")
 
-/*
-	Camel Case 전략
-	그외에은 소문자
-*/
+// 	fmt.Println(r1)
+// 	fmt.Println(r2)
+// }
 
-func solution(s string) string{
-	var convertStr []string
-	str := strings.Split(s," ")
+// func solution(s string) string {
 
-	for _, s := range str {
-		convertStr = append(convertStr,strings.Title(s))
-	}
-
-	return strings.Join(convertStr," ")
-}
-
-
+// 	return strings.Title(strings.ToLower(s))
+// }
