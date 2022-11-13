@@ -1,34 +1,38 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main(){
-	r1 :=solution(10,2)
+	r1 := runningSum([]int{1,2,3,4})	
+	r2 := runningSum([]int{1,1,1,1,1})
+	r3 := runningSum([]int{3,1,2,10,1})
+
 	fmt.Println(r1)
-
-	r2 :=solution(8,1)
 	fmt.Println(r2)
-
-	r3 :=solution(24,24)
 	fmt.Println(r3)
-
-	r4 :=solution(12,4)
-	fmt.Println(r4)
-
 }
 
+// Time O(n) + Memory O(n)
+// func runningSum(nums []int) []int {
+// 	var result = make([]int, len(nums))
+// 	sum := 0
 
-	func solution(brown int, yellow int) []int {
-		xpy := brown / 2 + 2
-		for x := 3; x <= xpy; x++ {
-			for y := 3; y <= x; y++ {
-				if yellow == (x - 2) * (y - 2) && brown == (x + y) * 2 - 4 {
-					return []int { x, y }
-				}
-			}
-		}
-	
-		return []int { 0, 0 } 
+// 	for i,v := range nums{
+// 		sum += v
+// 		result[i] = sum
+// 	}
+
+// 	return result
+// }
+
+// Time O(n) + Memory (1)
+func runningSum(nums []int) []int {
+	sum := 0
+	for i,v := range nums{
+		sum += v
+		nums[i] = sum
 	}
+
+	return nums
+}
+
