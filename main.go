@@ -3,36 +3,49 @@ package main
 import "fmt"
 
 func main(){
-	r1 := runningSum([]int{1,2,3,4})	
-	r2 := runningSum([]int{1,1,1,1,1})
-	r3 := runningSum([]int{3,1,2,10,1})
+	r1 := pivotIndex([]int{1,7,3,6,5,6})
+	r2 := pivotIndex([]int{1,2,3})
+	r3 := pivotIndex([]int{2,1,-1})
 
 	fmt.Println(r1)
 	fmt.Println(r2)
 	fmt.Println(r3)
 }
 
-// Time O(n) + Memory O(n)
-// func runningSum(nums []int) []int {
-// 	var result = make([]int, len(nums))
-// 	sum := 0
+func pivotIndex(nums []int) int {
+	index := -1
 
-// 	for i,v := range nums{
-// 		sum += v
-// 		result[i] = sum
-// 	}
+	for i, _:= range nums {
 
-// 	return result
-// }
+		var ls int
+		var rs int
 
-// Time O(n) + Memory (1)
-func runningSum(nums []int) []int {
-	sum := 0
-	for i,v := range nums{
-		sum += v
-		nums[i] = sum
+		arrLen := len(nums)
+		if i == 0 {
+			ls = sumArray([]int{0})
+			rs = sumArray(nums[1:arrLen])
+		}else if i == arrLen {
+			ls = sumArray(nums[0:arrLen])
+			rs = sumArray([]int{0})
+		}else{
+			ls = sumArray(nums[0:i])
+			rs = sumArray(nums[i+1:arrLen])
+		}
+
+		if ls == rs {
+			return i
+		}
+
 	}
 
-	return nums
+	return index
 }
 
+func sumArray(nums []int) int{
+
+	sum := 0
+	for _, v:= range nums {
+		sum += v
+	}
+	return sum
+}
