@@ -1,9 +1,9 @@
-// package main
+package main
 
 // import "fmt"
 
 // func main(){
-// 	r1 := runningSum([]int{1,2,3,4})	
+// 	r1 := runningSum([]int{1,2,3,4})
 // 	r2 := runningSum([]int{1,1,1,1,1})
 // 	r3 := runningSum([]int{3,1,2,10,1})
 
