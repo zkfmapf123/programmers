@@ -1,28 +1,44 @@
 package main
 
-import "fmt"
- 
- type ListNode struct {
-      Val int
-      Next *ListNode
+import (
+	"fmt"
+)
+
+
+func main(){
+	fmt.Println(maxProfit([]int{7,1,5,3,6,4}))
+	fmt.Println(maxProfit([]int{7,6,4,3,1}))
+	fmt.Println(maxProfit([]int{2,4,1}))	
+	fmt.Println(maxProfit([]int{1,2}))	
+
+	// v := []int{7,1,5,3,6,4}
+	// fmt.Println(v)
+	// fmt.Println(v[0:5])
 }
 
-func main(){ 
-	l1 := ListNode{Val :3, Next: nil}
-	l2 := ListNode{Val :2, Next: nil}
-	l3 := ListNode{Val :0, Next: nil}
-	l4 := ListNode{Val :-4, Next: nil}
+// DD
+func maxProfit(prices []int) int {
+	if prices == nil || len(prices) == 0 {
+		return 0
+	}
 
-	l1.Next= &l2
-	l2.Next = &l3
-	l3.Next = &l4
-	l4.Next = &l2
 	
+	sum := 0
+	buy := prices[0]
+	for i,sell := range prices {
+		if i == 0 {
+			continue
+		}
 
-	h := detectCycle(&l1)
-	fmt.Println(h)
-}
+		if buy > sell {
+			buy = sell
+			continue
+		}
 
-func detectCycle(head *ListNode) *ListNode {
-	
+		if buy < sell && sum < sell-buy {
+			sum = sell-buy
+		}	
+	}
+
+	return sum
 }
