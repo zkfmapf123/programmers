@@ -1,4 +1,6 @@
 package main
+
+import "fmt"
  
  type ListNode struct {
       Val int
@@ -6,7 +8,7 @@ package main
 }
 
 func main(){
-	reverseList(&ListNode{
+	h := middleNode(&ListNode{
 		Val: 1,
 		Next: &ListNode{
 			Val : 2,
@@ -25,21 +27,38 @@ func main(){
 		},
 	})
 
- 	// reverseList(&ListNode{})
+	fmt.Println(h)
+	fmt.Println(h.Next)
+	fmt.Println(h.Next.Next)
+	fmt.Println(h.Next.Next.Next)
+
+
+
 }
 
 
+// Runtime 100%, Memory 14%
+func middleNode(head *ListNode) *ListNode {
 
-func reverseList(head *ListNode) *ListNode {
-	if head == nil || head.Next == nil {
-		return head
+	crnList := head
+	i := 0
+	for crnList != nil {
+		i += 1
+		crnList = crnList.Next
 	}
 
-	// 5
-	r := reverseList(head.Next)
+	mid := int(i/2)
+	j := 0
+	for head!= nil{
 
-	head.Next.Next = head
-	head.Next = nil
+		if j < mid {
+			head = head.Next
+			j++
+		}else{
+			break	
+		}
 
-	return r
+	}
+
+	return head   
 }
