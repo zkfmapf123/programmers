@@ -7,58 +7,22 @@ import "fmt"
       Next *ListNode
 }
 
-func main(){
-	h := middleNode(&ListNode{
-		Val: 1,
-		Next: &ListNode{
-			Val : 2,
-			Next: &ListNode{
-				Val : 3,
-				Next: 
-				&ListNode{
-					Val : 4,
-					Next: 
-					&ListNode{
-						Val : 5,
-						Next: nil,
-					},
-				},
-			},
-		},
-	})
+func main(){ 
+	l1 := ListNode{Val :3, Next: nil}
+	l2 := ListNode{Val :2, Next: nil}
+	l3 := ListNode{Val :0, Next: nil}
+	l4 := ListNode{Val :-4, Next: nil}
 
+	l1.Next= &l2
+	l2.Next = &l3
+	l3.Next = &l4
+	l4.Next = &l2
+	
+
+	h := detectCycle(&l1)
 	fmt.Println(h)
-	fmt.Println(h.Next)
-	fmt.Println(h.Next.Next)
-	fmt.Println(h.Next.Next.Next)
-
-
-
 }
 
-
-// Runtime 100%, Memory 14%
-func middleNode(head *ListNode) *ListNode {
-
-	crnList := head
-	i := 0
-	for crnList != nil {
-		i += 1
-		crnList = crnList.Next
-	}
-
-	mid := int(i/2)
-	j := 0
-	for head!= nil{
-
-		if j < mid {
-			head = head.Next
-			j++
-		}else{
-			break	
-		}
-
-	}
-
-	return head   
+func detectCycle(head *ListNode) *ListNode {
+	
 }
