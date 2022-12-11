@@ -2,25 +2,41 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
 )
 
-
 func main(){
-	// fmt.Println(longestPalindrome("abccccdd"))
-	// fmt.Println(longestPalindrome("a"))
-	// fmt.Println(longestPalindrome("ccc"))
-	// fmt.Println(longestPalindrome("bananas"))
-	fmt.Println(longestPalindrome("civilwartestingwhetherthatnaptionoranynartionsoconceivedandsodedicatedcanlongendureWeareqmetonagreatbattlefiemldoftzhatwarWehavecometodedicpateaportionofthatfieldasafinalrestingplaceforthosewhoheregavetheirlivesthatthatnationmightliveItisaltogetherfangandproperthatweshoulddothisButinalargersensewecannotdedicatewecannotconsecratewecannothallowthisgroundThebravelmenlivinganddeadwhostruggledherehaveconsecrateditfaraboveourpoorponwertoaddordetractTgheworldadswfilllittlenotlenorlongrememberwhatwesayherebutitcanneverforgetwhattheydidhereItisforusthelivingrathertobededicatedheretotheulnfinishedworkwhichtheywhofoughtherehavethusfarsonoblyadvancedItisratherforustobeherededicatedtothegreattdafskremainingbeforeusthatfromthesehonoreddeadwetakeincreaseddevotiontothatcauseforwhichtheygavethelastpfullmeasureofdevotionthatweherehighlyresolvethatthesedeadshallnothavediedinvainthatthisnationunsderGodshallhaveanewbirthoffreedomandthatgovernmentofthepeoplebythepeopleforthepeopleshallnotperishfromtheearth"))
+	// fmt.Println(romanToInt("III"))
+	// fmt.Println(romanToInt("LVIII"))
+	// fmt.Println(romanToInt("MCMXCIV"))
+	fmt.Println(romanToInt("MCDLXXVI"))
 }
 
-func longestPalindrome(s string) int {
+func romanToInt(s string) int {
+	sum := 0
+	r := strings.NewReplacer(
+		"CM","900,",
+		"CD" , "400,",
+		"XC","90,",
+		"XL","40,",
+		"IV","4,",
+		"IX","9,",
+		"I","1,",
+		"V","5,",
+		"X","10,",
+		"L","50,",
+		"C","100,",
+		"D","500,",
+		"M","1000,",
+	)
 
-	m := map[string]int{}
-
-	for _, v := range strings.Split(s, ""){
-
+	result := strings.Split(r.Replace(s), ",")
+	fmt.Println(result)
+	for _, r  := range result {
+		num,_ := strconv.Atoi(r)
+		sum += num
 	}
 
-	return result
+	return sum
 }
