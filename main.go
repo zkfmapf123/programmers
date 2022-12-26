@@ -2,41 +2,78 @@ package main
 
 import (
 	"fmt"
-	"strconv"
-	"strings"
 )
 
-func main(){
-	// fmt.Println(romanToInt("III"))
-	// fmt.Println(romanToInt("LVIII"))
-	// fmt.Println(romanToInt("MCMXCIV"))
-	fmt.Println(romanToInt("MCDLXXVI"))
+type ListNode struct {
+	Val int
+	Next *ListNode
 }
 
-func romanToInt(s string) int {
-	sum := 0
-	r := strings.NewReplacer(
-		"CM","900,",
-		"CD" , "400,",
-		"XC","90,",
-		"XL","40,",
-		"IV","4,",
-		"IX","9,",
-		"I","1,",
-		"V","5,",
-		"X","10,",
-		"L","50,",
-		"C","100,",
-		"D","500,",
-		"M","1000,",
-	)
-
-	result := strings.Split(r.Replace(s), ",")
-	fmt.Println(result)
-	for _, r  := range result {
-		num,_ := strconv.Atoi(r)
-		sum += num
+func main(){
+	li := ListNode{
+		Val: 2,
+		Next : &ListNode{
+			Val : 4,
+			Next: &ListNode{
+				Val: 3,
+				Next: nil,
+			},
+		},
 	}
 
-	return sum
+	li2 := ListNode{
+		Val: 5,
+		Next : &ListNode{
+			Val : 6,
+			Next: &ListNode{
+				Val: 4,
+				Next: nil,
+			},
+		},
+	}
+
+	fmt.Println((addTwoNumbers(&li,&li2)))
+}
+
+func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+
+	head := new(ListNode)
+	cur := head
+
+	isOver := false
+
+	for true  {
+		n1, n2 := 0,0
+
+		if l1 != nil {
+			n1 = l1.Val
+			l1 = l1.Next
+		}
+
+		if l2 != nil {
+			n2 = l2.Val
+			l2 = l2.Next
+		}
+
+		sum := n1 + n2
+		if isOver {
+			sum += 1
+			isOver = false
+		}
+
+		if sum >= 10 {
+			sum -= 10
+			isOver = true
+		}
+
+		
+		cur.Next = &ListNode{Val : sum}
+		cur = cur.Next
+		
+		if l1 == nil && l2 == nil && !isOver {
+			break
+		}
+	}
+	
+	return head.Next
 }
