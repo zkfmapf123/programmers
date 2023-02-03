@@ -2,31 +2,43 @@ package main
 
 import (
 	"fmt"
-	"strings"
+	"math"
+	"sort"
 )
 
 func main(){
-	fmt.Println(solution("banana"))
-	fmt.Println(solution("foobar"))
+	solution(3,[]int{10,100,20,150,1,100,200})
+	solution(4,[]int{0, 300, 40, 300, 20, 70, 150, 50, 500, 1000})
+	// solution(9,[]int{10, 30, 40, 3, 0, 20, 4})
 }
 
-func solution(s string) []int {
-	strArr := strings.Split(s, "")
-	result := make([]int,len(s))	
-	result[0] = -1
+func solution(k int, score []int) []int {
+	result := make([]int,len(score))
 
-	resultLen := len(result)
-	for i := 1; i<resultLen; i++ {
-		
-		str := strArr[i]
-		arr := strArr[0:i]
+	arr := make([]int,k)
+	for i,v := range score {
 
-		lastIndex := strings.LastIndex(strings.Join(arr,""), str)
-		if lastIndex == -1 {
-			result[i] = -1
+		if i < k {
+			result[i] = score[0]
+			arr[i] = v
 		}else{
-			result[i] = i - lastIndex
+			result[i] = diffNum(arr, v)
+
 		}
 	}
+
+	fmt.Println(result)
     return result
+}
+
+func diffNum(score []int, value int) int{
+	sort.Ints(score)
+	max := int(math.Max(float64(score[0]), float64(value)))
+
+	if score[0] <= max {
+		score[0] = max
+	}
+
+	sort.Ints(score)
+	return score[0]
 }
