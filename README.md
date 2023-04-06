@@ -1,8 +1,7 @@
-# Programmers use Golang
+# Algorithm use Golang
 
 ## Desc
 
-- 알고리즘 연습
-
+- Programmer
 - LeetCode
-  - https://leetcode.com/study-plan/leetcode-75/?progress=xvwyxlei
+- Backjune

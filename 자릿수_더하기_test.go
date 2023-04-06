@@ -1,4 +1,4 @@
-package main
+// package main
 
 // func solution(n int) int {
 // 	answer := 0

@@ -1,4 +1,4 @@
-package main
+// package main
 
 // func main(){
 // 	// r1 := solution([]int{3,0,6,1,5})

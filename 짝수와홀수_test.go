@@ -1,9 +1,9 @@
-package main
+// package main
 
-const (
-	ODD = "Odd"
-	EVEN = "Even"
-)
+// const (
+// 	ODD = "Odd"
+// 	EVEN = "Even"
+// )
 
 // func solution(num int) string {
 
@@ -16,7 +16,7 @@ const (
 
 // func Test_1(t *testing.T) {
 // 	solution(3)
-// } 
+// }
 
 // func Test_2(t *testing.T) {
 // 	solution(4)
