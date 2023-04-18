@@ -1,4 +1,4 @@
-// package main
+package main
 
 // import (
 // 	"fmt"
@@ -66,14 +66,13 @@
 // 			isOver = true
 // 		}
 
-		
 // 		cur.Next = &ListNode{Val : sum}
 // 		cur = cur.Next
-		
+
 // 		if l1 == nil && l2 == nil && !isOver {
 // 			break
 // 		}
 // 	}
-	
+
 // 	return head.Next
 // }

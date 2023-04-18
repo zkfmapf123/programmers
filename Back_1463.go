@@ -1,4 +1,4 @@
-// package main
+package main
 
 // import (
 // 	"bufio"
@@ -9,11 +9,11 @@
 // 	"strings"
 // )
 
-// func main(){	
+// func main(){
 // 	n := input()
 
 // 	dp := make([]int, n+1)
-	
+
 // 	// mapping
 // 	dp[0] = 0
 // 	dp[1] = 0

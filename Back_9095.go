@@ -1,4 +1,4 @@
-// package main
+package main
 
 // import (
 // 	"bufio"
@@ -18,7 +18,7 @@
 // 	dp[3] = 4
 
 // 	for i,_ := range dp {
-		
+
 // 		if i > 3 {
 // 			dp[i] = dp[i-3] + dp[i-2] + dp[i-1]
 // 		}
@@ -34,13 +34,13 @@
 // 	var input string
 // 	fmt.Scanln(&input)
 // 	len, _ := strconv.Atoi(input)
-	
+
 // 	nums := make([]int, len)
 
 // 	for i:=0; i< len; i++ {
 // 		scn := bufio.NewScanner(os.Stdin)
 // 		scn.Scan()
-	
+
 // 		v, _ := strconv.Atoi(strings.Split(scn.Text(), " ")[0])
 // 		nums[i] = v
 // 	}

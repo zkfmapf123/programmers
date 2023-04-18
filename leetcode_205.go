@@ -1,4 +1,4 @@
-// package main
+package main
 
 // func isIsomorphic(s string, t string) bool {
 

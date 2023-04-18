@@ -1,4 +1,4 @@
-// package main
+package main
 
 // import (
 // 	"fmt"
@@ -12,12 +12,12 @@
 
 // func solution(s string) []int {
 // 	strArr := strings.Split(s, "")
-// 	result := make([]int,len(s))	
+// 	result := make([]int,len(s))
 // 	result[0] = -1
 
 // 	resultLen := len(result)
 // 	for i := 1; i<resultLen; i++ {
-		
+
 // 		str := strArr[i]
 // 		arr := strArr[0:i]
 

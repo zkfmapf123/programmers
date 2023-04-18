@@ -1,4 +1,4 @@
-// package main
+package main
 
 // func main() {
 // 	solution([]string{"may", "kein", "kain", "radi"}, []int{5, 10, 1, 3}, [][]string{

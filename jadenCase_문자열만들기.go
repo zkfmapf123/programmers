@@ -1,4 +1,4 @@
-// package main
+package main
 
 // func main(){
 // 	r1 := solution("3people unFollowed me")

@@ -1,4 +1,4 @@
-// package main
+package main
 
 // import (
 // 	"bufio"
@@ -24,7 +24,7 @@
 // 		isMatch := true
 
 // 		for _,v := range strings.Split(str, ""){
-			
+
 // 			if v == "(" {
 // 				s.push(v)
 // 			}
@@ -33,7 +33,7 @@
 
 // 			if err != nil {
 // 				isMatch = false
-// 				break	
+// 				break
 // 			}
 
 // 			if err == nil && prefix == "(" && v == ")" {

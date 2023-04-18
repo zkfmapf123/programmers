@@ -1,4 +1,4 @@
-// package main
+package main
 
 // import (
 // 	"bufio"
@@ -59,4 +59,3 @@
 // 	fmt.Fscanf(r, "%d\n", &N)
 // 	return N
 // }
-

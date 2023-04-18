@@ -1,4 +1,4 @@
-// package main
+package main
 
 // import (
 // 	"fmt"
@@ -18,10 +18,10 @@
 // 	str, tArr := "", strings.Split(t,"")
 
 // 	for i, _:= range tArr{
-		
+
 // 		lastIndex := i + len(p)
 // 		if lastIndex > len(tArr) {
-// 			break	
+// 			break
 // 		}
 
 // 		str = strings.Join(tArr[i:i+len(p)], "")

@@ -1,44 +1,44 @@
 package main
 
-import (
-	"fmt"
-)
+// import (
+// 	"fmt"
+// )
 
-func main() {
-	fmt.Println(solution([]int{1, 2, 3, 4, 5}, 7))
-	// fmt.Println(solution([]int{1, 1, 1, 2, 3, 4, 5}, 5))
-	// fmt.Println(solution([]int{2, 2, 2, 2, 2}, 6))
-}
+// func main() {
+// 	fmt.Println(solution([]int{1, 2, 3, 4, 5}, 7))
+// 	// fmt.Println(solution([]int{1, 1, 1, 2, 3, 4, 5}, 5))
+// 	// fmt.Println(solution([]int{2, 2, 2, 2, 2}, 6))
+// }
 
-func solution(sequence []int, k int) []int {
+// func solution(sequence []int, k int) []int {
 
-	answer := make([]int, len(sequence))
-	forth, sum, _len := 0, 0, 1000000
+// 	answer := make([]int, len(sequence))
+// 	forth, sum, _len := 0, 0, 1000000
 
-	for i := 0; i < len(sequence); i++ {
+// 	for i := 0; i < len(sequence); i++ {
 
-		sum += sequence[i]
-		if sum == k {
-			if _len > i-forth {
-				answer[0] = forth
-				answer[1] = i
-				_len = i - forth
-			}
-			sum -= sequence[forth]
-			forth++
-			continue
-		}
+// 		sum += sequence[i]
+// 		if sum == k {
+// 			if _len > i-forth {
+// 				answer[0] = forth
+// 				answer[1] = i
+// 				_len = i - forth
+// 			}
+// 			sum -= sequence[forth]
+// 			forth++
+// 			continue
+// 		}
 
-		if sum > k {
-			sum -= sequence[forth]
-			forth++
-			sum -= sequence[i]
-			i--
-		}
-	}
+// 		if sum > k {
+// 			sum -= sequence[forth]
+// 			forth++
+// 			sum -= sequence[i]
+// 			i--
+// 		}
+// 	}
 
-	return []int{answer[0], answer[1]}
-}
+// 	return []int{answer[0], answer[1]}
+// }
 
 // n log(n) 시간초과
 // n 으로 풀어야 함

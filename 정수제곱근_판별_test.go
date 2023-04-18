@@ -1,4 +1,4 @@
-// package main
+package main
 
 // func solution(n int64) int64 {
 // 	sqrt := int64(math.Sqrt(float64(n)))

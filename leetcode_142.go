@@ -1,4 +1,4 @@
-// package main
+package main
 
 // func detectCycle(head *ListNode) *ListNode {
 // if head == nil {

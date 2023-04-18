@@ -1,4 +1,4 @@
-// package main
+package main
 
 // import (
 // 	"bufio"
@@ -24,7 +24,7 @@
 // 		dp[i] = dp[i-1] + dp[i-2]
 // 	}
 
-// 	fmt.Print(dp[v])	
+// 	fmt.Print(dp[v])
 // }
 
 // func input() string{
