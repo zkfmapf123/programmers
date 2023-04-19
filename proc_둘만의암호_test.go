@@ -1,65 +1,57 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-	"testing"
-
-	"github.com/stretchr/testify/assert"
-)
-
 // go test -run ./proc_둘만의암호_test.go
-func solution(s string, skip string, index int) string {
+// func solution(s string, skip string, index int) string {
 
-	result := ""
-	alphbet := getAlphbetMap(skip)
+// 	result := ""
+// 	alphbet := getAlphbetMap(skip)
 
-	for _, r := range s {
-		str := string(r)
-		result += findAlphbet(alphbet, str, index)
-	}
+// 	for _, r := range s {
+// 		str := string(r)
+// 		result += findAlphbet(alphbet, str, index)
+// 	}
 
-	return result
+// 	return result
 
-}
+// }
 
-func findAlphbet(alphbet string, target string, index int) string {
+// func findAlphbet(alphbet string, target string, index int) string {
 
-	alphabetList := strings.Split(alphbet, "")
+// 	alphabetList := strings.Split(alphbet, "")
 
-	idx := -1
-	for i, v := range alphabetList {
+// 	idx := -1
+// 	for i, v := range alphabetList {
 
-		if v == target {
-			idx = i
-		}
-	}
+// 		if v == target {
+// 			idx = i
+// 		}
+// 	}
 
-	selectIdx := idx + index
+// 	selectIdx := idx + index
 
-	for selectIdx > len(alphabetList) {
-		selectIdx = (idx + index) - len(alphabetList)
-	}
+// 	for selectIdx > len(alphabetList) {
+// 		selectIdx = (idx + index) - len(alphabetList)
+// 	}
 
-	fmt.Println(alphabetList, (idx + index), len(alphabetList))
-	return alphabetList[idx+index]
-}
+// 	fmt.Println(alphabetList, (idx + index), len(alphabetList))
+// 	return alphabetList[idx+index]
+// }
 
-func getAlphbetMap(skip string) string {
+// func getAlphbetMap(skip string) string {
 
-	alphabet := "abcdefghijklmnopqrstuvwxyz"
+// 	alphabet := "abcdefghijklmnopqrstuvwxyz"
 
-	for _, c := range skip {
-		alphabet = strings.Replace(alphabet, string(c), "", 1)
-	}
+// 	for _, c := range skip {
+// 		alphabet = strings.Replace(alphabet, string(c), "", 1)
+// 	}
 
-	return alphabet
-}
+// 	return alphabet
+// }
 
-func TestSolution(t *testing.T) {
-	v1 := solution("aukks", "wbqd", 5)
-	// v2 := solution("zzzzzz", "abcdefghijklmnopqrstuvwxy", 6)
+// func TestSolution(t *testing.T) {
+// 	v1 := solution("aukks", "wbqd", 5)
+// 	// v2 := solution("zzzzzz", "abcdefghijklmnopqrstuvwxy", 6)
 
-	assert.Equal(t, v1, "happy")
-	// assert.Equal(t, v2, "zzzzzz")
-}
+// 	assert.Equal(t, v1, "happy")
+// 	// assert.Equal(t, v2, "zzzzzz")
+// }
