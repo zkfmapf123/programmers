@@ -1,68 +1,61 @@
 package main
 
-import (
-	"math"
-	"testing"
+// func solution(keymap []string, targets []string) []int {
 
-	"github.com/stretchr/testify/assert"
-)
+// 	touchPad := getTouchPad(keymap)
 
-func solution(keymap []string, targets []string) []int {
+// 	ret := make([]int, len(targets))
+// 	for i, target := range targets {
+// 		ret[i] = getMinTouchPadNum(touchPad, target)
+// 	}
 
-	touchPad := getTouchPad(keymap)
+// 	return ret
 
-	ret := make([]int, len(targets))
-	for i, target := range targets {
-		ret[i] = getMinTouchPadNum(touchPad, target)
-	}
+// }
 
-	return ret
+// func getTouchPad(keymaps []string) map[string]int {
 
-}
+// 	m := make(map[string]int)
+// 	for _, keys := range keymaps {
 
-func getTouchPad(keymaps []string) map[string]int {
+// 		for i, key := range keys {
+// 			str := string(key)
 
-	m := make(map[string]int)
-	for _, keys := range keymaps {
+// 			// touchPad가 없을 때
+// 			if m[str] == 0 {
+// 				m[str] = i + 1
+// 				continue
+// 			}
 
-		for i, key := range keys {
-			str := string(key)
+// 			m[str] = int(math.Min(float64(m[str]), float64(i+1)))
+// 		}
+// 	}
 
-			// touchPad가 없을 때
-			if m[str] == 0 {
-				m[str] = i + 1
-				continue
-			}
+// 	return m
+// }
 
-			m[str] = int(math.Min(float64(m[str]), float64(i+1)))
-		}
-	}
+// func getMinTouchPadNum(m map[string]int, target string) int {
 
-	return m
-}
+// 	sum := 0
+// 	for _, ru := range target {
+// 		str := string(ru)
 
-func getMinTouchPadNum(m map[string]int, target string) int {
+// 		if m[str] == 0 {
+// 			return -1
+// 		}
 
-	sum := 0
-	for _, ru := range target {
-		str := string(ru)
+// 		sum += m[str]
+// 	}
 
-		if m[str] == 0 {
-			return -1
-		}
+// 	return sum
+// }
 
-		sum += m[str]
-	}
+// func TestSolution(t *testing.T) {
+// 	v1 := solution([]string{"ABACD", "BCEFD"}, []string{"ABCD", "AABB"})
+// 	v2 := solution([]string{"AA"}, []string{"B"})
+// 	v3 := solution([]string{"AGZ", "BSSS"}, []string{"ASA", "BGZ"})
 
-	return sum
-}
-
-func TestSolution(t *testing.T) {
-	v1 := solution([]string{"ABACD", "BCEFD"}, []string{"ABCD", "AABB"})
-	v2 := solution([]string{"AA"}, []string{"B"})
-	v3 := solution([]string{"AGZ", "BSSS"}, []string{"ASA", "BGZ"})
-
-	assert.Equal(t, v1, []int{9, 4})
-	assert.Equal(t, v2, []int{-1})
-	assert.Equal(t, v3, []int{4, 6})
-}
+// 	assert.Equal(t, v1, []int{9, 4})
+// 	assert.Equal(t, v2, []int{-1})
+// 	assert.Equal(t, v3, []int{4, 6})
+// }
