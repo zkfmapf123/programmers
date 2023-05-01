@@ -1,28 +1,20 @@
 package main
 
-import (
-	"strconv"
-	"strings"
-	"testing"
+// func solution(n int64) []int {
 
-	"github.com/stretchr/testify/assert"
-)
+// 	str := strings.Split(strconv.Itoa(int(n)), "")
+// 	arr := []int{}
 
-func solution(n int64) []int {
+// 	for i := len(str) - 1; i >= 0; i-- {
+// 		num, _ := strconv.Atoi(str[i])
+// 		arr = append(arr, num)
+// 	}
 
-	str := strings.Split(strconv.Itoa(int(n)), "")
-	arr := []int{}
+// 	return arr
+// }
 
-	for i := len(str) - 1; i >= 0; i-- {
-		num, _ := strconv.Atoi(str[i])
-		arr = append(arr, num)
-	}
+// func TestSolution(t *testing.T) {
 
-	return arr
-}
-
-func TestSolution(t *testing.T) {
-
-	t1 := solution(12345)
-	assert.Equal(t, t1, []int{5, 4, 3, 2, 1})
-}
+// 	t1 := solution(12345)
+// 	assert.Equal(t, t1, []int{5, 4, 3, 2, 1})
+// }
