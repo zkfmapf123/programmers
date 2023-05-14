@@ -1,9 +1,15 @@
 package main
 
+// import (
+// 	"testing"
+
+// 	"github.com/stretchr/testify/assert"
+// )
+
 // func solution(n int) int {
 
-// 	for i := 2; i<n; i++{
-// 		if n % i == 1 {
+// 	for i := 2; i < n; i++ {
+// 		if n%i == 1 {
 // 			return i
 // 		}
 // 	}
@@ -16,7 +22,7 @@ package main
 // 	assert.Equal(t, n, 3)
 // }
 
-// func TestTwo(t *testing.T){
+// func TestTwo(t *testing.T) {
 // 	n := solution(12)
-// 	assert.Equal(t, n ,11)
+// 	assert.Equal(t, n, 11)
 // }
